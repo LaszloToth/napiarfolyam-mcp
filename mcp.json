@@ -1,0 +1,44 @@
+
+{
+  "name": "napiarfolyam",
+  "version": "1.0.0",
+  "description": "Hungarian daily exchange rate API integration",
+  "endpoints": [
+    {
+      "name": "getRates",
+      "method": "GET",
+      "path": "/rates",
+      "parameters": {
+        "currency": {
+          "type": "string",
+          "description": "Currency code (e.g., EUR, USD, HUF)"
+        },
+        "date": {
+          "type": "string",
+          "description": "Date in YYYY-MM-DD format"
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "currency": { "type": "string" },
+          "rate": { "type": "number" },
+          "date": { "type": "string" }
+        }
+      }
+    },
+    {
+      "name": "getCurrencies",
+      "method": "GET",
+      "path": "/currencies",
+      "parameters": {},
+      "response": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "description": "List of available currency codes"
+        }
+      }
+    }
+  ]
+}
